@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Share Your Travel Experience</title>
+        <link rel="stylesheet" type="text/css" href="/stylesheets/home.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.1/dist/semantic.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.1/dist/semantic.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    </head>
+        <div class="travel-grid-container">
+                  {{!-- <script id="t" type="text/x-handlebars-template"> --}}
+                  <img src="images/briefcase01.jpg" alt="Travel the World"/>
+                  {{!-- </script> --}}
+           
+                <h1>Share Your Travel Experience Here!</h1>       
+
+  {{#if loggedIn}}
+  <div class="travel-grid-item1">
+    <form class="ui form" method='GET' action="/travel/new">
+    {{!-- <button type="submit" class="ui animated huge button" tabindex="0">Write a New Travel Log</button> --}}
+      <div class="ui animated huge button" onclick="window.location.href='/travel/new'" tabindex="0">
+        <div class="visible content">Write a New Travel Log</div>
+        <div class="hidden content">
+          <i class="pencil alternate icon"></i>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="travel-grid-item2">
+    <form class="ui form" method='POST' action="/users/logout">
+    {{!-- <button class="negative-button" type="submit">Log Out</button> --}}
+        <button type="submit" class="btn btn-secondary btn-lg">Log Out</button>
+    {{!-- <div class="ui animated huge button" onclick="window.location.href='/users/logout'" tabindex="0">
+  <div class="visible content">Log Out</div>
+  <div class="hidden content">
+    <i class="sign out alternate icon"></i>
+  </div>
+</div> --}}
+    </form>
+  </div>
+{{else}}
+  <div class="form-group">
+  <form method='GET' action="/users/new">
+  {{!--   <button type="submit">Register</button> --}}
+    <button type="submit" class="btn btn-info btn-lg">Register</button>
+  </form>
+</div>
+  <form method='GET' action="/users/login">
+{{!--     <button type="submit">Log In</button> --}}
+    <button type="submit" class="btn btn-info btn-lg">Log in</button>
+
+    <p class="mt-5 mb-3 text-muted">© Better Underdogs 2018</p>
+  </form>
+{{/if}}
+
+{{#if loggedIn}}
+  {{!-- <h2>---Your Pokemons---</h2> --}}
+  <div class="pokemon-grid-container">  
+    {{#each userPokemons}}
+    <a href="/pokemons/{{this.id}}" class="pokemon-grid-item">
+      <div class="pokemon-image-container">
+        <img class="pokemon-image" src="{{this.img}}">
+      </div>
+      <p class="pokemon-num">#{{this.num}}</p>
+      <p class="pokemon-name">{{this.name}}</p>
+    </a>
+    {{/each}}
+  </div>
+{{/if}}
+
+{{!-- <h2>---Pokemons---</h2> --}}
+<div class="pokemon-grid-container">  
+  {{#each pokemons}}
+  <a href="/pokemons/{{this.id}}" class="pokemon-grid-item">
+    <div class="pokemon-image-container">
+      <img class="pokemon-image" src="{{this.img}}">
+    </div>
+    <p class="pokemon-num">#{{this.num}}</p>
+    <p class="pokemon-name">{{this.name}}</p>
+  </a>
+  {{/each}}
+</div>
+</div>   

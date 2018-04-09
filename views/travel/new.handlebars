@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Travel Log</title>
+  <link rel="stylesheet" type="text/css" href="/stylesheets/newlog.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.1/dist/semantic.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.1/dist/semantic.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+  <div class="container">
+    <h1>Write Your Travel Adventure Here!</h1>
+    <form class="pokemon-form" method="POST" action="/travel/new">
+      <div class="ui form">
+        <div class="field">
+          <label>Title</label>
+          <input name="title" placeholder="Give your log a title" type="text">
+        </div>
+      </div>
+      <div class="ui form">
+        <div class="field">
+          <label>Country</label>
+          <input name="country" placeholder="Name of country" type="text">
+        </div>
+      </div>  
+      <div class="ui form">
+        <div class="field">
+          <label>City</label>
+          <input name="city" placeholder="Name of city" type="text">
+        </div>
+      </div>  
+      <div class="ui form">
+        <div class="field">
+          <label>Travel Period</label>
+          <input name="travel" placeholder="Example: June 2017" type="text">
+        </div>
+      </div>
+      <div class="ui form">
+        <div class="field">
+          <label>Your Log</label>
+          <textarea name="content" placeholder="Share your log or itinerary here" rows="26"></textarea>
+        </div>
+        <div class="ui form">
+          <div class="field">
+            <label>Types of Traveller</label>
+            <div class="ui selection dropdown">
+              <input type="hidden" name="travellertype">
+              <i class="dropdown icon"></i>
+              <div class="default text">Types of Traveller</div>
+              <div class="menu">
+                <div class="item" data-value="Business">Business</div>
+                <div class="item" data-value="Family">Family</div>
+                <div class="item" data-value="Solo">Solo</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="item1" class="item">
+        <button id="button1" class="ui button" type="submit">Submit</button>
+      </div>
+
+    {{!-- <div class="pokemon-attribute">
+      num:<input name="num" type="text"/>
+    </div>
+    <div class="pokemon-attribute">
+      name:<input name="name" type="text"/>
+    </div>
+    <div class="pokemon-attribute">
+      img:<input name="img" type="text"/>
+    </div>
+    <div class="pokemon-attribute">
+      height:<input name="height" type="text"/>
+    </div>
+    <div class="pokemon-attribute">
+      weight:<input name="weight" type="text"/>
+    </div>
+    <input name="submit" type="submit"/> --}}
+  </form>
+</div>
+<script src="/js/travelnew.min.js"></script>
+</body>
+</html>

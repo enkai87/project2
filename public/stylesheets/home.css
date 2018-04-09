@@ -1,0 +1,39 @@
+img {
+	padding-bottom: 20px;
+}
+	
+h1 {
+	padding-top: 50px;
+	padding-bottom: 50px;
+	margin: 20px 20px 20px 20px;
+	text-align: center;
+}
+
+button {
+	margin: 20px 20px 20px 20px;
+	padding-top: 30px;
+}
+
+.travel-grid-container {
+	text-align: center;
+	padding-top: 20px;
+	/*background-color: #edefec;*/
+}
+
+.travel-grid-item1 {
+	padding-top: 10px;
+}
+
+.travel-grid-item2 {
+	padding-top: 20px;
+}
+
+.button1 {
+	padding-bottom: 20px;
+	margin: 20px 20px 20px 20px;
+}
+
+.button2 {
+	padding-bottom: 20px;
+	margin: 20px 20px 20px 20px;
+}
